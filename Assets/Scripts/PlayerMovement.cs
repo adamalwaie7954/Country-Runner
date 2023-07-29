@@ -32,8 +32,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-
-        SwipeTest();
+        if(!pausemenu.GameIsPaused)
+        {
+            SwipeTest();
+        }
         if(Input.GetButtonDown("Jump") && isGrounded){
             rb.AddForce(Vector2.up * jump);
         }
@@ -59,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Enemy")){
+            Debug.Log("Hit");
             scenemanager.Instance.MainMenu();
         }
     }
@@ -98,8 +101,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.AddForce(Vector2.up * jump);
             }
-            else if(Distance.y < 0)
+            else if(Distance.y < 0 && timer > 1)
             {
+                timer = 0;
                 anim.SetTrigger("Slide");
             }
         }

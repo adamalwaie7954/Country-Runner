@@ -21,7 +21,7 @@ public class UImainmenu : MonoBehaviour
 
     private void startplay()
     {
-        scenemanager.Instance.level1();
+        scenemanager.Instance.Malaysia();
         music.Stop();
     }
     private void startcollectables()
