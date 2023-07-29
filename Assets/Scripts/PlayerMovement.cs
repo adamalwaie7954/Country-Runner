@@ -18,10 +18,12 @@ public class PlayerMovement : MonoBehaviour
 
     public float jump;
     private Rigidbody2D rb;
-    private bool isGrounded;
+    public bool isGrounded;
     private float timer;
 
     public Animator anim;   
+
+    //public GameManagerJapanScript gameManagerJapanScript;
 
     void Awake()
     {
