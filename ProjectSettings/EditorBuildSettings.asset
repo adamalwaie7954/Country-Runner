@@ -9,6 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/Scenes/mainmenu.unity
     guid: 166cf8e70ef6ad44faf167421e4f63c8
   - enabled: 1
@@ -22,6 +23,9 @@ EditorBuildSettings:
     guid: 5d1049878fb339c47b1d35175a6ce9de
   - enabled: 1
     path: Assets/Scenes/level1.unity
+=======
+    path: Assets/Scenes/Malaysia.unity
+>>>>>>> Stashed changes
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 8fff358b98a782d4b8dff1eac3466ff8, type: 2}

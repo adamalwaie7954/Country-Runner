@@ -3,7 +3,10 @@ guid: 5e85199214991ac42bffd2f98ff5f1ec
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - spawnObject: {instanceID: 0}
+  - spawnObjectQuickSand: {fileID: 4079302567332375454, guid: ddb7925d338007b4fa404bc32b2c9333, type: 3}
+  - distanceUI: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

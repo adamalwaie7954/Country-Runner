@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public float jump;
     private Rigidbody2D rb;
     private bool isGrounded;
+    private float timer;
 
     public Animator anim;   
 
@@ -30,12 +31,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+
         SwipeTest();
         if(Input.GetButtonDown("Jump") && isGrounded){
             rb.AddForce(Vector2.up * jump);
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftShift)){
+        if(Input.GetKeyDown(KeyCode.LeftShift) && timer > 1){
+            timer = 0;
             anim.SetTrigger("Slide");
         }
     }
