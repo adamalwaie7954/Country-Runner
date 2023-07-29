@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static int collection = 0;
     public float maxSwipetime;
     public float minswipeDistance;
 
@@ -64,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Enemy")){
             Debug.Log("Hit");
+            collection += 5;
             scenemanager.Instance.MainMenu();
         }
     }

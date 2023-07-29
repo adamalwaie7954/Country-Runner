@@ -29,4 +29,12 @@ public class pausemenu : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
+
+    public void Exit()
+    {
+        scenemanager.Instance.MainMenu();
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        pauseMenuUI.SetActive(false);
+    }
 }

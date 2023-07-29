@@ -9,6 +9,7 @@ public class GameManagerScript : MonoBehaviour
     public GameObject spawnObjectDurian;
     public GameObject spawnObjectDurianPos1;
     public GameObject spawnObjectDurianPos2;
+    public GameObject spawnObjectQuickSand;
     public GameObject[] spawnPoints;
     public float timer;
     public float timeBetweenSpawns;
@@ -33,16 +34,24 @@ public class GameManagerScript : MonoBehaviour
         if(timer > timeBetweenSpawns)
         {
             timer = 0;
-            int randNum = Random.Range(0, 3);
+            int randNum = Random.Range(0, 4);
 
             if(randNum == 1){
                 Instantiate(spawnObjectDurian, spawnPoints[randNum].transform.position, Quaternion.identity);
                 Instantiate(spawnObjectDurianPos1, spawnPoints[1].transform.position, Quaternion.identity);
                 Instantiate(spawnObjectDurianPos2, spawnPoints[2].transform.position, Quaternion.identity);
                 Debug.Log("Random1");
-            }
+            }   
 
+            else if(randNum == 3){
+                Instantiate(spawnObjectQuickSand, spawnPoints[randNum].transform.position, Quaternion.identity);
+                Debug.Log("Random3");
+            }
+            
+            else{
             Instantiate(spawnObject, spawnPoints[randNum].transform.position, Quaternion.identity);
+                Debug.Log("Random");
+            }
             
         }
     }
