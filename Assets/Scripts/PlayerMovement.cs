@@ -5,6 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float maxSwipetime;
+    public float minswipeDistance;
+
+    private Vector2 starttouchpos;
+    private Vector2 endtouchpos;
+
+    private float swipeStartTime;
+    private float swipeEndTime;
+    private float swipeTime;
+    private float swipelength;
+
     public float jump;
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -16,15 +27,10 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
+        SwipeTest();
         if(Input.GetButtonDown("Jump") && isGrounded){
             rb.AddForce(Vector2.up * jump);
         }
@@ -33,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetTrigger("Slide");
         }
     }
+  
 
     private void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.CompareTag("Ground")){
@@ -49,6 +56,48 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Enemy")){
             SceneManager.LoadScene(0);
+        }
+    }
+
+    void SwipeTest()
+    {
+        if(Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if(touch.phase == TouchPhase.Began)
+            {
+                swipeStartTime = Time.time;
+                starttouchpos = touch.position;
+            }
+            else if (touch.phase == TouchPhase.Ended)
+            {
+                swipeEndTime = Time.time;
+                endtouchpos = touch.position;
+                swipeTime = swipeEndTime - swipeStartTime;
+                swipelength = (endtouchpos - starttouchpos).magnitude;
+                if(swipeTime < maxSwipetime && swipelength > minswipeDistance)
+                {
+                    SwipeControl();
+                }
+            }    
+        }
+    }
+
+    void SwipeControl()
+    {
+        Vector2 Distance = endtouchpos - starttouchpos;
+        float xDistance = Mathf.Abs(Distance.x);
+        float yDistance = Mathf.Abs(Distance.y);
+        if(yDistance > xDistance)
+        {
+            if(Distance.y > 0 && isGrounded)
+            {
+                rb.AddForce(Vector2.up * jump);
+            }
+            else if(Distance.y < 0)
+            {
+                anim.SetTrigger("Slide");
+            }
         }
     }
 }

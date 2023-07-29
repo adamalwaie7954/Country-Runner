@@ -461,6 +461,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 735c0a8e09c10624cbc49cfee7d0217f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSwipetime: 0.3
+  minswipeDistance: 40
   jump: 500
   anim: {fileID: 1222483111}
 --- !u!50 &1222483107
