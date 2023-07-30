@@ -17,9 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/levels/Malaysia.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
-  - enabled: 0
-    path: Assets/Scenes/Egypt.unity
-    guid: de7e55e873770d147a3fea9d23dfe156
   - enabled: 1
     path: Assets/Scenes/levels/Egypt.unity
     guid: 40dcf5951270289439f4bfa2eea40800

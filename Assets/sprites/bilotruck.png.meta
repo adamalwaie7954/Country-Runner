@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a0fc233b0fb4bc945bfc9e18ad3a0334
+guid: 1cd73827a94e9bb4988396297e037746
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -39,11 +39,11 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 0
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -147,7 +147,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bilotruck_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 52
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba43cfd8244ea942b6876182adf861c
+      internalID: 210303160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bilotruck_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 52
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66247abb871f6c3438e4128398c8ee8a
+      internalID: -1363708368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bilotruck_2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 52
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d555540593d1ed1409aba2145f07cee8
+      internalID: 763571621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bilotruck_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 52
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fca1ae929c480d4a8cf7fd807f2bb6a
+      internalID: 1094641151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +242,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bilotruck_0: 210303160
+      bilotruck_1: -1363708368
+      bilotruck_2: 763571621
+      bilotruck_3: 1094641151
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
