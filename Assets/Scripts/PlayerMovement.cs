@@ -128,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator jumping()
     {
         mainanim.SetTrigger("prejump");
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         jumpaudio.Play();
         rb.AddForce(Vector2.up * jump);
         mainanim.SetTrigger("jump");

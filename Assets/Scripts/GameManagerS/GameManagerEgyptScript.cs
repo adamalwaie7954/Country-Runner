@@ -12,6 +12,25 @@ public class GameManagerEgyptScript2 : MonoBehaviour
     public float timeBetweenSpawns;
     public GameObject spawnSecretLevelEgypt;
     public GameObject spawnObjectLevelTransition;
+    public GameObject blackscreen;
+    public SpriteRenderer people;
+    public SpriteRenderer mainsprite;
+    public SpriteRenderer mainsprite1;
+    public SpriteRenderer mainsprite2;
+    public SpriteRenderer people1;
+    public SpriteRenderer bg;
+    public Sprite airportbg;
+    public Sprite country;
+    public Sprite spfield;
+    public Sprite spairport;
+    public Sprite spmarket;
+    public Sprite sphuman;
+    public Sprite spfieldcorn;
+    public Sprite peopleline;
+
+    public bool field = false;
+    public bool airport = false;
+    public bool changingscene = false;
 
     private float distance;
 
@@ -49,15 +68,73 @@ public class GameManagerEgyptScript2 : MonoBehaviour
             Debug.Log("Random");
             } 
 
-            if(distance >= 10f){
+            if(distance >= 60f){
                 Instantiate(spawnObjectLevelTransition, spawnPoints[randNum].transform.position, Quaternion.identity);
                 Debug.Log("NextLevel");
 
-            /*if(distance >= 2 && distance <= 13f){
-                Instantiate(spawnSecretLevelEgypt, spawnPoints[2].transform.position, Quaternion.identity);
-                Debug.Log("secret");
-            }*/
-        }
+                /*if(distance >= 2 && distance <= 13f){
+                    Instantiate(spawnSecretLevelEgypt, spawnPoints[2].transform.position, Quaternion.identity);
+                    Debug.Log("secret");
+                }*/
+
+                if (distance >= 20f && !field)
+                {
+                    field = true;
+                    StartCoroutine(changefieldscenes());
+                }
+                else if (distance >= 40f && !airport)
+                {
+                    airport = true;
+                    StartCoroutine(changeairportscenes());
+                }
+
+                if (distance >= 25f && distance <= 28f)
+                {
+                    Instantiate(spawnSecretLevelEgypt, spawnPoints[2].transform.position, Quaternion.identity);
+                }
+            }
+
     }
-}
+
+        IEnumerator changefieldscenes()
+        {
+            changingscene = true;
+            blackscreen.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            blackscreen.SetActive(false);
+            mainsprite.sprite = spfield;
+            mainsprite1.sprite = spfield;
+            mainsprite2.sprite = spfield;
+            changingscene = false;
+        }
+
+        IEnumerator changeairportscenes()
+        {
+            changingscene = true;
+            blackscreen.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            blackscreen.SetActive(false);
+            mainsprite.sprite = spairport;
+            mainsprite1.sprite = spairport;
+            mainsprite2.sprite = spairport;
+            people.sprite = peopleline;
+            people1.sprite = peopleline;
+            bg.sprite = airportbg;
+            changingscene = false;
+        }
+
+/*        IEnumerator changeback()
+        {
+            changingscene = true;
+            blackscreen.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            blackscreen.SetActive(false);
+            mainsprite.sprite = spmarket;
+            mainsprite1.sprite = spmarket;
+            mainsprite2.sprite = spmarket;
+            bg.sprite = country;
+            people.sprite = sphuman;
+            changingscene = false;
+        }*/
+    }
 }

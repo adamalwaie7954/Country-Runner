@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6795922321089640001}
   - component: {fileID: 5204157697334967184}
   - component: {fileID: 1514983010438087126}
+  - component: {fileID: 4315944006538352071}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Enemy
@@ -171,5 +172,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3411b8ae226449b4d982a3386f6731be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 5
   killTimer: 5
+--- !u!95 &4315944006538352071
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6969098118429929421}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6c942b86de3b17648bdefcfeb7cade25, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

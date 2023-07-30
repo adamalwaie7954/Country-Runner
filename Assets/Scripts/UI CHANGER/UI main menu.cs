@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class UImainmenu : MonoBehaviour
 {
     [SerializeField] Button play;
-    [SerializeField] Button collectables;
     [SerializeField] Button settings;
     [SerializeField] Button quit;
     public AudioSource music;
@@ -14,7 +13,6 @@ public class UImainmenu : MonoBehaviour
     void Start()
     {
         play.onClick.AddListener(startplay);
-        collectables.onClick.AddListener(startcollectables);
         settings.onClick.AddListener(startsettings);
         quit.onClick.AddListener(startquit);
     }
@@ -23,10 +21,6 @@ public class UImainmenu : MonoBehaviour
     {
         scenemanager.Instance.Malaysia();
         music.Stop();
-    }
-    private void startcollectables()
-    {
-        scenemanager.Instance.Collectables();
     }
 
     private void startsettings()

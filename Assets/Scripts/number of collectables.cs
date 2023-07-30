@@ -40,9 +40,5 @@ public class numberofcollectables : MonoBehaviour
     }*/
 
         // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }

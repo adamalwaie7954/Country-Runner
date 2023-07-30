@@ -6,6 +6,7 @@ public class movewithcam : MonoBehaviour
     public GameObject go;
     public GameObject spawn1;
     public GameObject bg;
+    public GameObject box;
     void LateUpdate()
     {
         //attach Game Object go to target
@@ -13,5 +14,6 @@ public class movewithcam : MonoBehaviour
         go.transform.parent = target;
         spawn1.transform.parent = target;
         bg.transform.parent = target;
+        box.transform.parent = target;
     }
 }
