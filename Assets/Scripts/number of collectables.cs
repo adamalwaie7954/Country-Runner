@@ -11,7 +11,7 @@ public class numberofcollectables : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*if(PlayerMovement.collection <= 5)
+        /*if(PlayerMovement.collection <= 3)
         {
             if (PlayerPrefs.HasKey("numcollect"))
             {
@@ -21,13 +21,13 @@ public class numberofcollectables : MonoBehaviour
             else
             {
                 PlayerPrefs.SetInt("numcollect", PlayerMovement.collection);
-                numofCollect.text = PlayerMovement.collection + "/5";
+                numofCollect.text = PlayerMovement.collection + "/3";
             }
         }
         else
         {
            int maxnum = PlayerPrefs.GetInt("numcollect");
-            numofCollect.text = maxnum + "/5";
+            numofCollect.text = maxnum + "/3";
         }
     }
        

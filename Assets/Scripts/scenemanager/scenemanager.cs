@@ -18,13 +18,10 @@ public class scenemanager : MonoBehaviour
     {
         mainmenu,
         collectables,
-        levelselection,
         settings,
         Malaysia,
         Egypt,
         Japan,
-        Italy,
-        UK
     }
 
     public void MainMenu()
@@ -42,34 +39,14 @@ public class scenemanager : MonoBehaviour
         SceneManager.LoadScene(Scene.Malaysia.ToString());
     }
 
-    /*    public void level2()
-        {
-            SceneManager.LoadScene(Scene.level1.ToString());
-        }
-
-        public void level3()
-        {
-            SceneManager.LoadScene(Scene.level3.ToString());
-        }
-
-        public void level4()
-        {
-            SceneManager.LoadScene(Scene.level4.ToString());
-        }
-
-        public void level5()
-        {
-            SceneManager.LoadScene(Scene.level5.ToString());
-        }*/
-
-    public void NextLevel()
+    public void Egypt()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(Scene.Egypt.ToString());
     }
 
-    public void levelselection()
+    public void Japan()
     {
-        SceneManager.LoadScene(Scene.levelselection.ToString());
+        SceneManager.LoadScene(Scene.Japan.ToString());
     }
 
     public void settings()

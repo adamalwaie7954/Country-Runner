@@ -27,14 +27,14 @@ public class audiomanager : MonoBehaviour
     public void SetMusicVolume()
     {
         float volume = musicslider.value;
-        myMixer.SetFloat("music", Mathf.Log10(volume)*20);
+        myMixer.SetFloat("music", (Mathf.Log10(volume)*20) - 3);
         PlayerPrefs.SetFloat("music", volume);
     }
 
     public void SetSfxVolume()
     {
         float volume = sfxslider.value;
-        myMixer.SetFloat("sfx", Mathf.Log10(volume) * 20);
+        myMixer.SetFloat("sfx", (Mathf.Log10(volume) * 20)+ 6);
         PlayerPrefs.SetFloat("sfx", volume);
     }
 

@@ -22,7 +22,11 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
     private float timer;
 
-    public Animator anim;   
+    public Animator mainanim;
+
+    public AudioSource jumpaudio;
+    public AudioSource slideaudio;
+    public AudioSource landingaudio;
 
     //public GameManagerJapanScript gameManagerJapanScript;
 
@@ -45,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.LeftShift) && timer > 1){
             timer = 0;
-            anim.SetTrigger("Slide");
+            mainanim.SetTrigger("Slide");  
         }
     }
   
@@ -103,13 +107,35 @@ public class PlayerMovement : MonoBehaviour
         {
             if(Distance.y > 0 && isGrounded)
             {
-                rb.AddForce(Vector2.up * jump);
+                StartCoroutine(jumping());
             }
             else if(Distance.y < 0 && timer > 1)
             {
+                StartCoroutine(slideanim());
                 timer = 0;
-                anim.SetTrigger("Slide");
             }
         }
+    }
+
+    IEnumerator slideanim()
+    {
+        mainanim.SetTrigger("slide");
+        slideaudio.Play();
+        yield return new WaitForSeconds(0.7f);
+        mainanim.SetTrigger("slidedone");
+    }
+
+    IEnumerator jumping()
+    {
+        mainanim.SetTrigger("prejump");
+        yield return new WaitForSeconds(0.2f);
+        jumpaudio.Play();
+        rb.AddForce(Vector2.up * jump);
+        mainanim.SetTrigger("jump");
+        yield return new WaitForSeconds(0.3f);
+        mainanim.SetTrigger("falling");
+        mainanim.SetTrigger("landing");
+        yield return new WaitForSeconds(0.7f);
+        landingaudio.Play();
     }
 }
