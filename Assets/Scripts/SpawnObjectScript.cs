@@ -7,6 +7,7 @@ public class SpawnObjectScript : MonoBehaviour
     private Rigidbody2D rb;
     public float speed;
     private float timer;
+    public float killTimer = 5;
     
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class SpawnObjectScript : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(timer > 5){
+        if(timer > killTimer){
             Destroy(gameObject);
         }
         rb.velocity = Vector2.left * speed;

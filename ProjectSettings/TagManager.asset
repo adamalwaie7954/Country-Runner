@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - music
   - Train
+  - NextLevel
   layers:
   - Default
   - TransparentFX

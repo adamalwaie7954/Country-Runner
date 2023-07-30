@@ -1,13 +1,14 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class scenemanager : MonoBehaviour
+public class scenemanagerSecretLevel : MonoBehaviour
 {
+
     public bool adrianStinky;
     
-    public static scenemanager Instance;
+    private static scenemanager Instance;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -60,7 +61,7 @@ public class scenemanager : MonoBehaviour
         public void level5()
         {
             SceneManager.LoadScene(Scene.level5.ToString());
-        }*/
+        }
 
     public void NextLevel()
     {
@@ -83,4 +84,4 @@ public class scenemanager : MonoBehaviour
     }
 
     
-}
+}*/
