@@ -60,12 +60,12 @@ public class GameManagerScript : MonoBehaviour
                 Debug.Log("Random");
             }
             
-            if(distance >= 69f){
+            if(distance >= 120f){
                 Instantiate(spawnObjectLevelTransition, spawnPoints[randNum].transform.position, Quaternion.identity);
                 Debug.Log("NextLevel");
             }
 
-            if(distance >= 10f && distance <= 13f){
+            if(distance >= 69f && distance <= 72f){
                 Instantiate(spawnObjectSecretLevel, spawnPoints[2].transform.position, Quaternion.identity);
                 
             }           
