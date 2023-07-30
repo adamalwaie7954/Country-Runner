@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class scenemanager : MonoBehaviour
 {
-    public bool adrianStinky;
+    //public bool adrianStinky;
     
     public static scenemanager Instance;
     // Start is called before the first frame update

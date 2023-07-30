@@ -9,6 +9,8 @@ public class GameManagerJapanScript : MonoBehaviour
     public GameObject spawnObjectTrain;
     public GameObject[] spawnPoints;
     public PlayerMovement playerMovement;
+    public GameObject spawnObjectYouWin;
+    
     
     public float timer;
     public float timeBetweenSpawns;
@@ -39,6 +41,9 @@ public class GameManagerJapanScript : MonoBehaviour
        
         distance += Time.deltaTime * 0.8f;
         
+        if(distance >= 1f && distance <= 1.1f){
+            Instantiate(spawnObjectYouWin, spawnPoints[2].transform.position, Quaternion.identity);
+        }
 
         if(timer > timeBetweenSpawns)
         {

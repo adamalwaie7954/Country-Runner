@@ -44,12 +44,12 @@ public class PlayerMovement : MonoBehaviour
             SwipeTest();
         }
         if(Input.GetButtonDown("Jump") && isGrounded){
-            rb.AddForce(Vector2.up * jump);
+            StartCoroutine(jumping());
         }
 
         if(Input.GetKeyDown(KeyCode.LeftShift) && timer > 1){
-            timer = 0;
-            mainanim.SetTrigger("Slide");  
+                StartCoroutine(slideanim());
+                timer = 0;
         }
     }
   

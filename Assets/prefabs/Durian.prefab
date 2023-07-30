@@ -110,7 +110,7 @@ MonoBehaviour:
   - {fileID: 5911011694420942838, guid: 30fdca5e809fd2844875cdf90a7907ac, type: 3}
   - {fileID: 5911011694420942838, guid: 2aa5bd9c0fdfc3e49968c1efb992017b, type: 3}
   - {fileID: 5911011694420942838, guid: 86e5a2159417fa04fa6889aad187b9e5, type: 3}
-  ObjectSpeed: 10
+  ObjectSpeed: 1
 --- !u!114 &496571286613966829
 MonoBehaviour:
   m_ObjectHideFlags: 0
