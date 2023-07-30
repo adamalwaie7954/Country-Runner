@@ -10,6 +10,8 @@ public class GameManagerEgyptScript2 : MonoBehaviour
     public GameObject[] spawnPoints;
     public float timer;
     public float timeBetweenSpawns;
+    public GameObject spawnSecretLevelEgypt;
+    public GameObject spawnObjectLevelTransition;
 
     private float distance;
 
@@ -28,6 +30,10 @@ public class GameManagerEgyptScript2 : MonoBehaviour
 
         distance += Time.deltaTime * 0.8f;
 
+        /*if(timer >= 10f && timer <= 13f){
+            Instantiate(spawnSecretLevelEgypt, spawnPoints[2].transform.position, Quaternion.identity);
+        }*/
+
         if(timer > timeBetweenSpawns)
         {
             timer = 0;
@@ -42,6 +48,16 @@ public class GameManagerEgyptScript2 : MonoBehaviour
             Instantiate(spawnObject, spawnPoints[randNum].transform.position, Quaternion.identity);
             Debug.Log("Random");
             } 
+
+            if(distance >= 10f){
+                Instantiate(spawnObjectLevelTransition, spawnPoints[randNum].transform.position, Quaternion.identity);
+                Debug.Log("NextLevel");
+
+            /*if(distance >= 2 && distance <= 13f){
+                Instantiate(spawnSecretLevelEgypt, spawnPoints[2].transform.position, Quaternion.identity);
+                Debug.Log("secret");
+            }*/
         }
     }
+}
 }

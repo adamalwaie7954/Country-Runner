@@ -68,9 +68,7 @@ public class GameManagerScript : MonoBehaviour
             if(distance >= 10f && distance <= 13f){
                 Instantiate(spawnObjectSecretLevel, spawnPoints[2].transform.position, Quaternion.identity);
                 
-            }
-
-            
+            }           
         }
     }
 }
